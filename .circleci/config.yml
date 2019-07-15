@@ -84,11 +84,10 @@ workflows:
   version: 2
   lint_and_build:
     jobs:
-      - lint
-  build:
-    jobs:
       - build:
-          filters:
+        requires:
+          - lint
+        filters:
             branches:
               only:
                 - master
