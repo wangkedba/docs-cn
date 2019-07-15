@@ -81,8 +81,8 @@ workflows:
   lint_and_build:
     jobs:
       - lint
-      - build
-        filters:
+      - build:
+          filters:
             branches:
               only:
                 - master
