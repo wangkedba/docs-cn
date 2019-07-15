@@ -55,7 +55,7 @@ jobs:
       - image: circleci/ruby:2.4.1-node
 
     working_directory: ~/pingcap/docs-cn
-
+    
     steps:
       - checkout
 
@@ -82,15 +82,7 @@ jobs:
 
 workflows:
   version: 2
-  build:
-    jobs:
-      - build:
-          filters:
-            branches:
-              only:
-                - master
-                - website-preview
-
-  lint:
+  lint_and_build:
     jobs:
       - lint
+      - build
