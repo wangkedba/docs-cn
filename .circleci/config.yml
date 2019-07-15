@@ -78,10 +78,11 @@ jobs:
 
 workflows:
   version: 2
-
-  lint_and_build:
+  lint:
     jobs:
       - lint
+  build:
+    jobs:
       - build:
           filters:
             branches:
