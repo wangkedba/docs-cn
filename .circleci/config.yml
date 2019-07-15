@@ -82,13 +82,15 @@ jobs:
 
 workflows:
   version: 2
-  lint_and_build:
+  build:
     jobs:
       - build:
-        requires:
-          - lint
-        filters:
+          filters:
             branches:
               only:
                 - master
                 - website-preview
+
+  lint:
+    jobs:
+      - lint
